@@ -1,0 +1,105 @@
+
+.voetbal-navbar {
+    background-color: #123d25;
+    padding: 12px 25px;
+    border-bottom: 4px solid #65c466;
+}
+
+.voetbal-navbar .nav-link {
+    color: white;
+    font-weight: 600;
+    margin-right: 15px;
+    transition: 0.3s;
+}
+
+.voetbal-navbar .nav-link:hover {
+    color: #75e879;
+}
+
+.voetbal-navbar .login-knop {
+    background-color: #65c466;
+    color: #123d25;
+    border-radius: 6px;
+    padding: 8px 16px;
+}
+
+.voetbal-navbar .register-knop {
+    background-color: #65c466;
+    color: #123d25;
+    border-radius: 6px;
+    padding: 8px 16px;
+}
+
+.voetbal-navbar .register-knop:hover {
+    background-color: #8bea8d;
+    color: #123d25;
+}
+
+
+.voetbal-navbar .login-knop:hover {
+    background-color: #8bea8d;
+    color: #123d25;
+}
+
+.voetbal-navbar .navbar-brand img {
+    object-fit: contain;
+}
+.container {
+    text-align: center;
+}
+
+.card {
+    border-radius: 12px;
+    padding: 10px;
+    height: 100%;
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.card-text {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.card-img-top {
+    width: 80%;
+    height: 200%;
+    object-fit: contain;
+}
+
+.footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 20px 30px;
+    box-sizing: border-box;
+    background-color: #cdcdcd;
+}
+
+.footer-links,
+.footer-rechts {
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+
+.footer-rechts {
+    justify-content: flex-end;
+}
+
+.footer-midden {
+    text-align: center;
+}
+
+.footer img {
+    height: 100px;
+    width: auto;
+    max-width: 100%;
+}

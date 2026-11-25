@@ -1,7 +1,7 @@
 
 <?php
 define("HOST", "localhost");
-define("DBNAME", "");
+define("DBNAME", "voetbaltoernooi");
 define("USER", "root");
 define("PASS", "");
 
