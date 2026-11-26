@@ -16,10 +16,11 @@ function toonNavbar() {
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
 
-        <li class="nav-item">
-          <a class="nav-link" href="Kalender.php">Kalender</a>
-        </li>
-
+        <?php if (isset($_SESSION['logged_in'])): ?>
+          <li class="nav-item">
+            <a class="nav-link" href="Kalender.php">Kalender</a>
+          </li>
+        <?php endif; ?>
         <li class="nav-item">
           <a class="nav-link" href="Uitslagen.php">Uitslagen</a>
         </li>
@@ -31,8 +32,8 @@ function toonNavbar() {
             <li class="nav-item">
                 <a class="nav-link" href="seriesbeheer.php">Series beheren</a>
             </li>
-            <?php endif; ?>
-
+         <?php endif; ?>
+        <?php if (!isset($_SESSION['logged_in'])): ?>
         <li class="nav-item">
           <a class="nav-link register-knop" href="Registreren.php">Registreren</a>
         </li>
@@ -40,7 +41,10 @@ function toonNavbar() {
         <li class="nav-item">
           <a class="nav-link login-knop" href="Inloggen.php">Inloggen</a>
         </li>
-
+        <?php endif; ?>
+        <?php if (isset($_SESSION['logged_in'])): ?>
+          <a class="nav-link login-knop" href="logout.php">Uitloggen</a>
+        <?php endif; ?>
       </ul>
     </div>
 
