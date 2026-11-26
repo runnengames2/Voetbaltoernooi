@@ -26,10 +26,10 @@ function toonNavbar() {
         </li>
         <?php if (isset($_SESSION['rol']) && $_SESSION['rol'] === 'admin'): ?>
             <li class="nav-item">
-                <a class="nav-link" href="filmsbeheren.php">Films beheren</a>
+                <a class="nav-link" href="OverzichtTeams.php">Overzicht teams</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="seriesbeheer.php">Series beheren</a>
+                <a class="nav-link" href="Aanmelden.php">Aanmelden</a>
             </li>
          <?php endif; ?>
         <?php if (!isset($_SESSION['logged_in'])): ?>
