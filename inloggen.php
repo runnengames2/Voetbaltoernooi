@@ -1,6 +1,9 @@
 <?php
-include_once 'db.php'; 
-?>
+if(session_start() === PHP_SESSION_NONE){
+session_start();
+}
+
+ include 'functions.php';?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,15 +12,13 @@ include_once 'db.php';
     <title>Inloggen</title>
     <link rel="stylesheet" href="CSS/Style.css">
     <link rel="icon" type="image/x-icon" href="IMG/Gouden_Voetbaltoernooi_Badge-removebg-preview.png">
-
-    <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
 
 </head>
 
-    <body class="login-page">
-        
+<body class="login-page">
+    
     <div class="card shadow-lg w-100" style="max-width: 480px;">
         <div class="card-body">
             <div class="text-center">
@@ -53,3 +54,5 @@ include_once 'db.php';
     </div>
 </body>
 </html>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>

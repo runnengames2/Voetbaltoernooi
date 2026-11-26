@@ -1,5 +1,9 @@
 <?php
-include_once 'db.php';
+if(session_start() === PHP_SESSION_NONE){
+session_start();
+}
+
+ include 'functions.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -53,3 +57,4 @@ include_once 'db.php';
     </div>
 </body>
 </html>
+
