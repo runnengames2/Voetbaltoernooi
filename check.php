@@ -18,7 +18,7 @@ if ($user && password_verify($password, $user['wachtwoord'])) {
 
     // Sessie zetten
     $_SESSION['logged_in'] = true;
-    $_SESSION['isadmin'] = $user['isadmin'];
+    $_SESSION['rol'] = $user['rol'];
 
     // Redirect naar index.php
     header("Location: index.php");
