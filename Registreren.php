@@ -10,7 +10,7 @@ session_start();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register</title>
+    <title>Aanmelden</title>
     <link rel="stylesheet" href="CSS/Style.css">
     <link rel="icon" type="image/x-icon" href="IMG/Gouden_Voetbaltoernooi_Badge-removebg-preview.png">
 
@@ -20,12 +20,12 @@ session_start();
 
 </head>
 
-    <body class="login-page">
+    <body class="register-page">
         
     <div class="card shadow-lg w-100" style="max-width: 480px;">
         <div class="card-body">
             <div class="text-center">
-                <h1 class="card-title h3">Register</h1>
+                <h1 class="card-title h3">Aanmelden</h1>
             </div>
             <div class="mt-4">
                 <form action="register_process.php" method="post">
@@ -34,15 +34,15 @@ session_start();
                         <input type="text" class="form-control" id="gebruikersnaam" name="gebruikersnaam" placeholder="Gebruikersnaam" required>
                     </div>
                     <div class="mb-4">
-                        <input type="password" class="form-control" id="password" name="password" placeholder="Password" required>
+                        <input type="password" class="form-control" id="password" name="password" placeholder="Wachtwoord" required>
                     </div>
                     <div class="d-grid">
-                        <button type="submit" class="btn btn-dark btn-lg">Register</button>
+                        <button type="submit" class="btn btn-success w-100">Aanmelden</button>
                     </div>
                     <br>
                     <div class="d-grid">
                         <a href="inloggen.php" class="btn btn-dark btn-lg">
-                            Sign in
+                            Inloggen
                         </a>
                     </div>
                     <br>
