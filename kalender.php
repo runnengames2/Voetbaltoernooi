@@ -10,6 +10,16 @@ $con = getDbConnection();
 
 $sql = "SELECT * FROM wedstrijden ORDER BY datum ASC";
 $stmt = $con->query($sql);
+
+$sql = "
+SELECT wedstrijden.*, toernooi.naam
+FROM wedstrijden
+INNER JOIN toernooi
+ON wedstrijden.toernooi_id = toernooi.idToernooi
+ORDER BY datum ASC
+";
+
+$stmt = $con->query($sql);
 ?>
 
 <!DOCTYPE html>
@@ -58,9 +68,7 @@ $stmt = $con->query($sql);
                         <hr>
 
                         <h5>
-                            <?php echo $row['score_thuis']; ?>
-                            -
-                            <?php echo $row['score_uit']; ?>
+                            <?php echo $row['naam']; ?>
                         </h5>
 
                     </div>
