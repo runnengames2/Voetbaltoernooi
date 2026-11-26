@@ -1,38 +1,24 @@
 <?php
-// Controleren van het inlogformulier en toekennen van sessiegegevens.
 session_start();
-require_once "db.php";
+require 'db.php';
 
-// Haal gebruikersnaam en wachtwoord uit het formulier.
-$username = $_POST['username'];
+// Email + wachtwoord uit het formulier
+$email = $_POST['email'];
 $password = $_POST['password'];
 
-// Kijk in de database of de gebruiker bestaat.
-$stmt = $pdo->prepare("SELECT * FROM user WHERE login = ?");
-$stmt->execute([$username]);
+// Gebruiker opzoeken in database
+$sql = "SELECT * FROM users WHERE email = :email LIMIT 1";
+$stmt = $pdo->prepare($sql);
+$stmt->execute(['email' => $email]);
 $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
-if ($user && password_verify($password, $user['password'])) {
+// Check of gebruiker bestaat + wachtwoord klopt
+if ($user && password_verify($password, $user['password_hash'])) {
 
-    // Aanmelden gelukt: zet sessievariabelen zodat de rest van de site weet dat iemand is ingelogd.
-    $_SESSION['logged_in'] = true;
-    $_SESSION['user'] = $user['login'];
-    $_SESSION['isadmin'] = $user['isadmin'];
+    // Sessie zetten
+    $_SESSION['user_id'] = $user['id'];
+    $_SESSION['user_name'] = $user['username'];
 
+    // Redirect naar index.php
     header("Location: index.php");
-    exit();
-
-} else {
-
-    // Foutmelding voor verkeerde inloggegevens.
-    echo "
-    <script src='https://code.jquery.com/jquery-3.7.1.min.js'></script>
-    <script>
-        $(function () {
-            alert('Verkeerde gebruikersnaam of wachtwoord');
-            window.location.href = 'login.php';
-        });
-    </script>
-    ";
-}
-?>
+    exit;
