@@ -11,15 +11,6 @@ $con = getDbConnection();
 $sql = "SELECT * FROM wedstrijden ORDER BY datum ASC";
 $stmt = $con->query($sql);
 
-$sql = "
-SELECT wedstrijden.*, toernooi.naam
-FROM wedstrijden
-INNER JOIN toernooi
-ON wedstrijden.toernooi_id = toernooi.idToernooi
-ORDER BY datum ASC
-";
-
-$stmt = $con->query($sql);
 ?>
 
 <!DOCTYPE html>
@@ -39,49 +30,7 @@ $stmt = $con->query($sql);
 
 <?php toonNavbar(); ?>
 
-<div class="container mt-5 mb-5">
 
-    <h1 class="text-center mb-5">Wedstrijdschema</h1>
-
-    <div class="row">
-
-        <?php while ($row = $stmt->fetch()) : ?>
-
-            <div class="col-md-4 mb-4">
-
-                <div class="card shadow h-100">
-
-                    <div class="card-header bg-success text-white text-center">
-                        <?php echo $row['datum']; ?>
-                    </div>
-
-                    <div class="card-body text-center">
-
-                        <h4>
-                            <?php echo htmlspecialchars($row['team_thuis']); ?>
-                            <br>
-                            <span class="text-success">VS</span>
-                            <br>
-                            <?php echo htmlspecialchars($row['team_uit']); ?>
-                        </h4>
-
-                        <hr>
-
-                        <h5>
-                            <?php echo $row['naam']; ?>
-                        </h5>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        <?php endwhile; ?>
-
-    </div>
-
-</div>
 
 <?php toonFooter(); ?>
 
