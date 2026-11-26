@@ -1,3 +1,9 @@
+html, body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+    margin: 0;
+}
 
 .voetbal-navbar {
     background-color: #123d25;
@@ -107,9 +113,9 @@
 
 .login-page {
     display: flex;
-    justify-content: center; /* Horizontaal centreren */
-    align-items: center;     /* Verticaal centreren */
-    min-height: 100vh;       /* Volledige schermhoogte */
+    justify-content: center; 
+    align-items: center;     
+    min-height: 100vh;       
     background-color: #f8f9fa;
 }
 
