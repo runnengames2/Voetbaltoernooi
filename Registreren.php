@@ -34,9 +34,6 @@ session_start();
                         <input type="text" class="form-control" id="username" name="username" placeholder="Username" required>
                     </div>
                     <div class="mb-4">
-                        <input type="email" class="form-control" id="email" name="email" placeholder="Email Address" required>
-                    </div>
-                    <div class="mb-4">
                         <input type="password" class="form-control" id="password" name="password" placeholder="Password" required>
                     </div>
                     <div class="d-grid">
