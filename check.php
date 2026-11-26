@@ -7,12 +7,13 @@ require_once "db.php";
 $username = $_POST['username'];
 $password = $_POST['password'];
 
-// Kijk in de database of deze combinatie klopt.
-$stmt = $pdo->prepare("SELECT * FROM user WHERE login = ? AND password = ?");
-$stmt->execute([$username, $password]);
+// Kijk in de database of de gebruiker bestaat.
+$stmt = $pdo->prepare("SELECT * FROM user WHERE login = ?");
+$stmt->execute([$username]);
 $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
-if ($user) {
+if ($user && password_verify($password, $user['password'])) {
+
     // Aanmelden gelukt: zet sessievariabelen zodat de rest van de site weet dat iemand is ingelogd.
     $_SESSION['logged_in'] = true;
     $_SESSION['user'] = $user['login'];
@@ -22,6 +23,7 @@ if ($user) {
     exit();
 
 } else {
+
     // Foutmelding voor verkeerde inloggegevens.
     echo "
     <script src='https://code.jquery.com/jquery-3.7.1.min.js'></script>
