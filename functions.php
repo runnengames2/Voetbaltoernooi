@@ -24,12 +24,13 @@ function toonNavbar() {
         <li class="nav-item">
           <a class="nav-link" href="Uitslagen.php">Uitslagen</a>
         </li>
-        <?php if (isset($_SESSION['rol']) && $_SESSION['rol'] === 'admin'): ?>
-            <li class="nav-item">
+        <li class="nav-item">
                 <a class="nav-link" href="OverzichtTeams.php">Overzicht teams</a>
             </li>
+        <?php if (isset($_SESSION['rol']) && $_SESSION['rol'] === 'admin'|| $_SESSION['rol'] === 'aanvoerder' ): ?>
             <li class="nav-item">
-                <a class="nav-link" href="Aanmelden.php">Aanmelden</a>
+                <a class="nav-link" href="Aanmelden.php">Aanmelden Team
+                </a>
             </li>
          <?php endif; ?>
           <a class="nav-link login-knop" href="logout.php">Uitloggen</a>
