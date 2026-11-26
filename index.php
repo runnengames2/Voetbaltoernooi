@@ -75,7 +75,7 @@ toonNavbar();
                     <p class="card-text">
                         Bekijk alle wedstrijden.
                     </p>
-                    <a href="schema.php" class="btn btn-primary">
+                    <a href="kalender.php" class="btn btn-primary">
                         Bekijk
                     </a>
                 </div>
