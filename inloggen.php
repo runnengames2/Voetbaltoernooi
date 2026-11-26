@@ -1,4 +1,6 @@
-<?php include 'navbar.php';?>
+<?php
+include_once 'db.php'; 
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -33,13 +35,18 @@
                     <div class="d-grid">
                         <button type="submit" class="btn btn-dark btn-lg">Sign in</button>
                     </div>
-                    <p class="text-center text-muted mt-4">Don't have an account yet?
-                        <a href="Registreren.php" class="text-decoration-none">Register</a>.
-                    </p>
-                    <p class="text-center text-muted mt-4">
-                        <a href="index.php" class="text-decoration-none">Back</a>.
-                    </p>
-                    
+                    <br>
+                    <div class="d-grid">
+                        <a href="Registreren.php" class="btn btn-dark btn-lg">
+                        Register
+                        </a>
+                    </div>  
+                    <br>
+                    <div class="d-grid">
+                        <a href="index.php" class="btn btn-dark btn-lg">
+                        Back
+                        </a>
+                    </div>
                 </form>
             </div>
         </div>

@@ -1,4 +1,7 @@
-<?php include 'navbar.php';?>
+<?php 
+include 'navbar.php';
+include_once 'db.php';
+?>
 
 <!DOCTYPE html>
 <html lang="en">
