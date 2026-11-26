@@ -3,6 +3,11 @@ if(session_start() === PHP_SESSION_NONE){
 session_start();
 }
 
+if (!isset($_SESSION['logged_in'])) {
+    header("Location: inloggen.php");
+    exit();
+}
+
  include 'functions.php';?>
 
 <!DOCTYPE html>
@@ -26,34 +31,89 @@ toonNavbar();
 ?>
 
 <hr>
-<div class="container">
-    <h1>Categorieën</h1>
-</div>
-<br>
-<div class="row">
-    <div class="col-md-6 mb-3">
-        <div class="card h-100">
-            <div class="card-body text-center">
-                <p class="card-text">Leeftijd 14 - 17</p>
-                <img src="IMG/Gouden_Voetbaltoernooi_Badge-removebg-preview.png"
-                     class="card-img-top"
-                     alt="Leeftijd 14 - 17">
-            </div>
-        </div>
-    </div>
 
-    <div class="col-md-6 mb-3">
-        <div class="card h-100">
-            <div class="card-body text-center">
-                <p class="card-text">Leeftijd 18 - 21</p>
-                <img src="IMG/Gouden_Voetbaltoernooi_Badge-removebg-preview.png"
-                     class="card-img-top"
-                     alt="Leeftijd 18 - 21">
-            </div>
-        </div>
+<!-- Hero -->
+<div class="container-fluid bg-dark text-white py-5">
+    <div class="container text-center">
+        <h1 class="display-4 fw-bold">Voetbal Toernooi 2027</h1>
+        <p class="lead">Meld je team aan en volg alle wedstrijden live.</p>
+
+        <a href="aanmelden.php" class="btn btn-success btn-lg me-2">
+            Team Aanmelden
+        </a>
+
+        <a href="uitslagen.php" class="btn btn-outline-light btn-lg">
+            Uitslagen
+        </a>
     </div>
 </div>
 
+<!-- Functionaliteiten -->
+<div class="container my-5">
+    <div class="row g-4">
+
+        <div class="col-md-3">
+            <div class="card h-100 shadow">
+                <div class="card-body text-center">
+                    <h3>⚽</h3>
+                    <h5 class="card-title">Teams</h5>
+                    <p class="card-text">
+                        Bekijk alle deelnemende teams.
+                    </p>
+                    <a href="teams.php" class="btn btn-primary">
+                        Bekijk
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="card h-100 shadow">
+                <div class="card-body text-center">
+                    <h3>📅</h3>
+                    <h5 class="card-title">Schema</h5>
+                    <p class="card-text">
+                        Bekijk alle wedstrijden.
+                    </p>
+                    <a href="schema.php" class="btn btn-primary">
+                        Bekijk
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="card h-100 shadow">
+                <div class="card-body text-center">
+                    <h3>🏆</h3>
+                    <h5 class="card-title">Standen</h5>
+                    <p class="card-text">
+                        Bekijk de actuele ranglijst.
+                    </p>
+                    <a href="stand.php" class="btn btn-primary">
+                        Bekijk
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="card h-100 shadow">
+                <div class="card-body text-center">
+                    <h3>📊</h3>
+                    <h5 class="card-title">Uitslagen</h5>
+                    <p class="card-text">
+                        Bekijk alle uitslagen.
+                    </p>
+                    <a href="uitslagen.php" class="btn btn-primary">
+                        Bekijk
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
 <?php
 toonFooter();
 ?>
