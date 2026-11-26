@@ -32,18 +32,7 @@ function toonNavbar() {
                 <a class="nav-link" href="Aanmelden.php">Aanmelden</a>
             </li>
          <?php endif; ?>
-        <?php if (!isset($_SESSION['logged_in'])): ?>
-        <li class="nav-item">
-          <a class="nav-link register-knop" href="Registreren.php">Registreren</a>
-        </li>
-
-        <li class="nav-item">
-          <a class="nav-link login-knop" href="Inloggen.php">Inloggen</a>
-        </li>
-        <?php endif; ?>
-        <?php if (isset($_SESSION['logged_in'])): ?>
           <a class="nav-link login-knop" href="logout.php">Uitloggen</a>
-        <?php endif; ?>
       </ul>
     </div>
 
