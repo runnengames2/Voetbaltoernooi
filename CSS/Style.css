@@ -103,3 +103,16 @@
     width: auto;
     max-width: 100%;
 }
+
+.login-page {
+    display: flex;
+    justify-content: center; /* Horizontaal centreren */
+    align-items: center;     /* Verticaal centreren */
+    min-height: 100vh;       /* Volledige schermhoogte */
+    background-color: #f8f9fa;
+}
+
+.card {
+    width: 100%;
+    max-width: 480px;
+}
