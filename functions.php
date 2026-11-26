@@ -24,8 +24,7 @@ function toonNavbar() {
         <li class="nav-item">
           <a class="nav-link" href="Uitslagen.php">Uitslagen</a>
         </li>
-        
-        <?php if ($_SESSION['rol'] == 'admin'): ?>
+        <?php if (isset($_SESSION['rol']) && $_SESSION['rol'] === 'admin'): ?>
             <li class="nav-item">
                 <a class="nav-link" href="filmsbeheren.php">Films beheren</a>
             </li>
