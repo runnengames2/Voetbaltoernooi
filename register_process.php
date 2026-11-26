@@ -3,24 +3,23 @@ require 'db.php';
 
 $pdo = getDbConnection();
 
-$username = $_POST['username'];
-$email = $_POST['email'];
+$gebruikersnaam = $_POST['gebruikersnaam'];
 $password = $_POST['password'];
 
-// Check of email al bestaat
-$check = $pdo->prepare("SELECT id FROM users WHERE email = ?");
-$check->execute([$email]);
+// Check of de gebruikersnaam al bestaat
+$check = $pdo->prepare("SELECT idGebruiker FROM gebruikers WHERE gebruikersnaam = ?");
+$check->execute([$gebruikersnaam]);
 
 if ($check->rowCount() > 0) {
-    die("Dit e-mailadres bestaat al.");
+    die("Deze gebruikersnaam bestaat al.");
 }
 
 // Wachtwoord hashen
 $password_hash = password_hash($password, PASSWORD_DEFAULT);
 
 // Opslaan in database
-$stmt = $pdo->prepare("INSERT INTO users (username, email, password_hash) VALUES (?, ?, ?)");
-$stmt->execute([$username, $email, $password_hash]);
+$stmt = $pdo->prepare("INSERT INTO gebruikers (gebruikersnaam, wachtwoord, rol) VALUES (?, ?, ?)");
+$stmt->execute([$gebruikersnaam, $password_hash, 'gebruiker']);
 
 // Doorsturen naar login
 header("Location: inloggen.php");

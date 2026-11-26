@@ -28,7 +28,7 @@ session_start();
                 <form action="check.php" method="post">
                     <div class="mb-4">
                         <img src="IMG/Gouden_Voetbaltoernooi_Badge-removebg-preview.png" alt="Logo" class="img-fluid mx-auto d-block" style="max-width: 150px;">
-                        <input type="email" class="form-control" id="gebruikersnaam" name="gebruikersnaam" placeholder="Gebruikersnaam" required>
+                        <input type="text" class="form-control" id="gebruikersnaam" name="gebruikersnaam" placeholder="Gebruikersnaam" required>
                     </div>
                     <div class="mb-4">
                         <input type="password" class="form-control" id="password" name="password" placeholder="Password" required>

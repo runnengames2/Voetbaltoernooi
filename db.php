@@ -25,6 +25,13 @@ function getDbConnection() {
             ]
         );
 
+        $con->exec("CREATE TABLE IF NOT EXISTS gebruikers (
+            idGebruiker INT AUTO_INCREMENT PRIMARY KEY,
+            gebruikersnaam VARCHAR(50) NOT NULL UNIQUE,
+            wachtwoord VARCHAR(255) NOT NULL,
+            rol VARCHAR(50) NOT NULL
+        )");
+
     } catch (PDOException $e) {
         error_log($e->getMessage());
         die('Er is een probleem met de databaseverbinding.');

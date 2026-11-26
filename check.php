@@ -4,22 +4,21 @@ require 'db.php';
 
 $pdo = getDbConnection();
 
-// Email + wachtwoord uit het formulier
-$email = $_POST['email'];
+$gebruikersnaam = $_POST['gebruikersnaam'];
 $password = $_POST['password'];
 
 // Gebruiker opzoeken in database
-$sql = "SELECT * FROM users WHERE email = :email LIMIT 1";
+$sql = "SELECT * FROM gebruikers WHERE gebruikersnaam = :gebruikersnaam LIMIT 1";
 $stmt = $pdo->prepare($sql);
-$stmt->execute(['email' => $email]);
+$stmt->execute(['gebruikersnaam' => $gebruikersnaam]);
 $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
 // Check of gebruiker bestaat + wachtwoord klopt
-if ($user && password_verify($password, $user['password_hash'])) {
+if ($user && password_verify($password, $user['wachtwoord'])) {
 
     // Sessie zetten
-    $_SESSION['user_id'] = $user['id'];
-    $_SESSION['user_name'] = $user['username'];
+    $_SESSION['logged_in'] = true;
+    $_SESSION['isadmin'] = $user['isadmin'];
 
     // Redirect naar index.php
     header("Location: index.php");
