@@ -1,6 +1,8 @@
 <?php
 require 'db.php';
 
+$pdo = getDbConnection();
+
 $username = $_POST['username'];
 $email = $_POST['email'];
 $password = $_POST['password'];
@@ -21,6 +23,6 @@ $stmt = $pdo->prepare("INSERT INTO users (username, email, password_hash) VALUES
 $stmt->execute([$username, $email, $password_hash]);
 
 // Doorsturen naar login
-header("Location: login.php");
+header("Location: inloggen.php");
 exit;
 ?>

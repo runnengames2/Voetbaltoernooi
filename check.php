@@ -2,6 +2,8 @@
 session_start();
 require 'db.php';
 
+$pdo = getDbConnection();
+
 // Email + wachtwoord uit het formulier
 $email = $_POST['email'];
 $password = $_POST['password'];
@@ -22,3 +24,6 @@ if ($user && password_verify($password, $user['password_hash'])) {
     // Redirect naar index.php
     header("Location: index.php");
     exit;
+} else {
+    echo "Email or password is incorrect.";
+}
